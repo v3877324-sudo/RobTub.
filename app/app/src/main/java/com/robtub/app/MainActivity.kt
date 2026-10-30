@@ -1,44 +1,23 @@
-package com.robtub.app
 
-import android.app.Activity
-import android.os.Bundle
-import android.graphics.Color
-import android.view.Gravity
-import android.widget.*
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-class MainActivity : Activity() {
+    <application
+        android:allowBackup="true"
+        android:label="RobTub"
+        android:supportsRtl="true">
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
 
-        val root = LinearLayout(this)
-        root.orientation = LinearLayout.VERTICAL
-        root.setBackgroundColor(Color.WHITE)
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
-        val header = TextView(this)
-        header.text = "RobTub"
-        header.textSize = 28f
-        header.setTextColor(Color.WHITE)
-        header.setPadding(20, 25, 20, 25)
-        header.setBackgroundColor(Color.rgb(35, 140, 230))
+        </activity>
 
-        root.addView(header)
+    </application>
 
-        val welcome = TextView(this)
-        welcome.text = "Добро пожаловать в RobTub ❤️"
-        welcome.textSize = 20f
-        welcome.gravity = Gravity.CENTER
-        welcome.setPadding(10, 40, 10, 40)
-
-        root.addView(welcome)
-
-        val chats = TextView(this)
-        chats.text = "💬  Пока нет сообщений\n\nТвои чаты появятся здесь."
-        chats.textSize = 18f
-        chats.setPadding(20, 20, 20, 20)
-
-        root.addView(chats)
-
-        setContentView(root)
-    }
-}
+</manifest>
